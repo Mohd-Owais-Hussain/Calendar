@@ -1,0 +1,250 @@
+.DayEvents {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+
+  .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      background-color: white;
+      border-radius: 10px;
+      border: 5px solid black;
+      border-radius: 10px;
+      width: 600px;
+      max-height: 50%;
+      box-shadow: -3px 3px 2px rgba($color: #000000, $alpha: 0.5);
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 5px solid black;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        background-color: #dab6ff;
+
+        .date {
+          margin-inline: 7px;
+          font-size: 2rem;
+          border-bottom: none;
+        }
+
+        .right-side {
+          display: flex;
+          gap: 10px;
+
+          .add-event-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: url("../../../public/cursor-pointer.png") 4 0, pointer;
+
+            &:hover {
+              color: #555;
+            }
+
+            &:active {
+              color: black;
+            }
+
+            .add-icon {
+              display: flex;
+              font-size: 2.3rem;
+            }
+
+            .add-event-text {
+              font-size: 1.2rem;
+            }
+          }
+
+          .close-btn {
+            display: flex;
+            align-items: center;
+            font-size: 2.3rem;
+            cursor: url("../../../public/cursor-pointer.png") 4 0, pointer;
+
+            &:hover {
+              color: #ff4242;
+            }
+          }
+        }
+      }
+
+      .events-container {
+        display: flex;
+        flex-direction: column;
+        padding: 4px;
+        gap: 4px;
+        height: 100%;
+        font-size: 1.5rem;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+          width: 5px;
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: #8686869a;
+          -webkit-border-radius: 5px;
+        }
+
+        .no-events-box {
+          padding: 20px;
+          text-align: center;
+          color: #515151;
+          border-radius: 5px;
+          border: 2px solid black;
+          background-color: #cde3ff;
+          font-size: 2rem;
+
+          .no-events-icon {
+            font-size: 3rem;
+          }
+        }
+
+        .add-event-form {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid black;
+          border-radius: 5px;
+
+          .input-field {
+            flex-grow: 1;
+            font-size: 1.5rem;
+            font-family: Itim;
+            padding: 4px 7px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+          }
+
+          .submit-add-event-btn {
+            display: flex;
+            padding: 7px;
+            font-size: 1.6rem;
+            cursor: url("../../../public/cursor-pointer.png") 4 0, pointer;
+
+            &:hover {
+              color: rgb(0, 188, 0);
+            }
+
+            &:active {
+              color: black;
+            }
+          }
+
+          .submit-add-event {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .DayEvents .overlay .container {
+    .header {
+      .date {
+        font-size: 1.5rem;
+      }
+
+      .right-side {
+        .add-event-btn {
+          .add-icon {
+            font-size: 2rem;
+          }
+        }
+
+        .close-btn {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    .events-container {
+      font-size: 1.1rem;
+
+      .no-events-box {
+        padding: 15px;
+        font-size: 1.5rem;
+
+        .no-events-icon {
+          font-size: 2.5rem;
+        }
+      }
+
+      .add-event-form {
+        .input-field {
+          font-size: 1.1rem;
+        }
+
+        .submit-add-event-btn {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .DayEvents .overlay .container {
+    .header {
+      .date {
+        font-size: 1.1rem;
+      }
+
+      .right-side {
+        .add-event-btn {
+          .add-icon {
+            font-size: 1.3rem;
+          }
+
+          .add-event-text {
+            font-size: 0.8rem;
+          }
+        }
+
+        .close-btn {
+          font-size: 1.3rem;
+        }
+      }
+    }
+
+    .events-container {
+      font-size: 1rem;
+
+      .no-events-box {
+        padding: 10px;
+        font-size: 1.2rem;
+
+        .no-events-icon {
+          font-size: 2.3rem;
+        }
+      }
+
+      .add-event-form {
+        .input-field {
+          font-size: 1rem;
+        }
+
+        .submit-add-event-btn {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

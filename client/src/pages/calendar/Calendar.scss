@@ -1,0 +1,51 @@
+.Calendar {
+  display: flex;
+  justify-content: center;
+
+  .container {
+    width: 90%;
+    margin: 5px;
+
+    .day-names {
+      display: flex;
+      background-color: rgb(28, 28, 47);
+      color: white;
+      width: 100%;
+      margin-bottom: 6px;
+      border: 2px solid black;
+      border-radius: 5px;
+
+      .single-day {
+        text-align: center;
+        width: 16%;
+        font-size: 1.5rem;
+      }
+    }
+
+    .days {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+      gap: 6px;
+    }
+  }
+}
+
+@media screen and (max-width: 934px) {
+  .Calendar .container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .Calendar .container .day-names .single-day {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .Calendar .container .day-names .single-day {
+    font-size: 0.6rem;
+  }
+}

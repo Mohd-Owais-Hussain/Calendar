@@ -1,0 +1,133 @@
+.SingleEvent {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  padding: 4px 7px;
+  border-radius: 5px;
+  border: 2px solid black;
+  background-color: #cde3ff;
+
+  .event-options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.7rem;
+
+    .edit-event-btn {
+      display: flex;
+      margin-bottom: 7px;
+      cursor: url("../../../public/cursor-pointer.png") 4 0, pointer;
+
+      &:hover {
+        color: #777;
+      }
+
+      &:active {
+        color: black;
+      }
+    }
+
+    .delete-event-btn {
+      display: flex;
+      margin-bottom: 7px;
+      cursor: url("../../../public/cursor-pointer.png") 4 0, pointer;
+
+      &:hover {
+        color: #ff4242;
+      }
+
+      &:active {
+        color: black;
+      }
+    }
+  }
+
+  .edit-event-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: white;
+
+    .edit-event-input {
+      flex-grow: 1;
+      font-size: 1.5rem;
+      font-family: Itim;
+      padding: 4px 4px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+    }
+
+    .submit-edit-event-btn {
+      display: flex;
+      padding: 7px;
+      font-size: 1.6rem;
+      cursor: url("../../../public/cursor-pointer.png") 4 0, pointer;
+
+      &:hover {
+        color: rgb(0, 188, 0);
+      }
+
+      &:active {
+        color: black;
+      }
+    }
+
+    .submit-edit-event {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .SingleEvent {
+    .event-options {
+      .edit-event-btn {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+      }
+
+      .delete-event-btn {
+        font-size: 1.4rem;
+        margin-bottom: 5px;
+      }
+    }
+
+    .edit-event-form {
+      .edit-event-input {
+        font-size: 1.1rem;
+      }
+
+      .submit-edit-event-btn {
+        font-size: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .SingleEvent {
+    .event-options {
+      .edit-event-btn {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+      }
+
+      .delete-event-btn {
+        font-size: 1.3rem;
+        margin-bottom: 4px;
+      }
+    }
+
+    .edit-event-form {
+      .edit-event-input {
+        font-size: 1rem;
+      }
+
+      .submit-edit-event-btn {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}
